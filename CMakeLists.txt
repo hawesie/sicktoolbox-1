@@ -39,6 +39,9 @@ target_link_libraries(SickLMS1xx ${catkin_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 add_library(SickLMS2xx c++/drivers/lms2xx/sicklms2xx/SickLMS2xx.cc c++/drivers/lms2xx/sicklms2xx/SickLMS2xxBufferMonitor.cc c++/drivers/lms2xx/sicklms2xx/SickLMS2xxMessage.cc)
 target_link_libraries(SickLMS2xx ${catkin_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 
+add_library(SickPLS c++/drivers/pls/sickpls/SickPLS.cc c++/drivers/pls/sickpls/SickPLSBufferMonitor.cc c++/drivers/pls/sickpls/SickPLSMessage.cc)
+target_link_libraries(SickPLS ${catkin_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
+
 # Examples
 add_library(LDConfigLib c++/examples/ld/ld_config/src/ConfigFile.cpp)
 add_executable(ld_config c++/examples/ld/ld_config/src/main.cc)
@@ -95,7 +98,7 @@ target_link_libraries(lms2xx_subrange SickLMS2xx ${catkin_LIBRARIES})
 # )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS SickLD SickLMS1xx SickLMS2xx LDConfigLib ld_config 
+install(TARGETS SickLD SickLMS1xx SickLMS2xx SickPLS LDConfigLib ld_config 
   ld_more_config ld_multi_sector ld_single_sector lms1xx_simple_app 
   lms2xx_config lms2xx_mean_values lms2xx_partial_scan lms2xx_real_time_indices 
   lms2xx_set_variant lms2xx_simple_app lms2xx_stream_range_and_reflect lms2xx_subrange
